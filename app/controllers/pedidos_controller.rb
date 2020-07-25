@@ -1,11 +1,18 @@
 class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :update, :destroy]
+  has_scope :by_canal
+
+  def by_canal
+    @pedidos = Pedido.by_canal(params[:canal_compra])
+    render :index
+  end
 
   # GET /pedidos
   def index
     @pedidos = Pedido.all
 
     render json: @pedidos
+
   end
 
   # GET /pedidos/1
