@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  canal_compra: MyString
+  nome_cliente: MyString
+  endereco: MyString
+  valor_total: 1.5
+  itens: MyString
+  status: MyString
+  lote: one
+
+two:
+  ref: MyString
+  canal_compra: MyString
+  nome_cliente: MyString
+  endereco: MyString
+  valor_total: 1.5
+  itens: MyString
+  status: MyString
+  lote: two
