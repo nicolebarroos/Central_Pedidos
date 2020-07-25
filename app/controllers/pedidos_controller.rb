@@ -4,7 +4,7 @@ class PedidosController < ApplicationController
 
   def by_canal
     @pedidos = Pedido.by_canal(params[:canal_compra])
-    render :index
+    render json: @pedidos
   end
 
   # GET /pedidos
