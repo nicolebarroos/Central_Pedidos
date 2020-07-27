@@ -11,6 +11,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 #Has scope allows you to map incoming controller parameters to named scopes in your resources
 gem 'has_scope'
+#rails admin
+gem 'rails_admin', '~> 2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

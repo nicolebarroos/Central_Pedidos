@@ -2,6 +2,7 @@ class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :update, :destroy]
   has_scope :by_canal
 
+  #Função pra passarmos o parâmetro canal_compra, que será usado na rota
   def by_canal
     @pedidos = Pedido.by_canal(params[:canal_compra])
     render json: @pedidos

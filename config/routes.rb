@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :pedidos
   resources :lotes
+  #Rota para filtrar um canal de compra específico
   get '/by_canal/:canal_compra', to: 'pedidos#by_canal'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
