@@ -1,10 +1,15 @@
 class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :update, :destroy]
-  has_scope :by_canal
+  has_scope :by_canal, :by_status
 
   #Função pra passarmos o parâmetro canal_compra, que será usado na rota
   def by_canal
     @pedidos = Pedido.by_canal(params[:canal_compra])
+    render json: @pedidos
+  end
+  #Função pra passarmos o parâmetro status, que será usado na rota 
+  def by_status
+    @pedidos = Pedido.by_status(params[:status])
     render json: @pedidos
   end
 
@@ -54,6 +59,6 @@ class PedidosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pedido_params
-      params.require(:pedido).permit(:ref, :canal_compra, :nome_cliente, :endereco, :valor_total, :itens, :status, :lote_id)
+      params.require(:pedido).permit(:ref, :canal_compra, :nome_cliente, :endereco, :valor_total, :itens, :status, :lote_id, :servico_entrega)
     end
 end
