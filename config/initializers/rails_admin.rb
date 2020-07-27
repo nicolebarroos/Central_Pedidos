@@ -1,6 +1,5 @@
 RailsAdmin.config do |config|
   config.main_app_name = ["Central de Pedidos"]
-  config.included_models = ["lote", "pedido"]
 
   ### Popular gems integration
 

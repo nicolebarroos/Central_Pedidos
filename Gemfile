@@ -13,6 +13,9 @@ gem 'puma', '~> 4.1'
 gem 'has_scope'
 #rails admin
 gem 'rails_admin', '~> 2.0'
+#biblioteca de autorização para Ruby e Ruby on Rails que restringe quais recursos 
+#um determinado usuário tem permissão para acessar.
+gem 'cancancan'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

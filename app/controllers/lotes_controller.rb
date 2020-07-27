@@ -1,5 +1,12 @@
 class LotesController < ApplicationController
     before_action :set_lote, only: [:show, :update, :destroy]
+    has_scope :by_status_lotes
+
+    #Filtrar determinado status dos lotes registrados
+    def by_status_lotes
+      @lotes = Lote.by_status_lotes(params[:status])
+      render json: @lotes
+    end
   
     # GET /pedidos
     def index
@@ -46,7 +53,7 @@ class LotesController < ApplicationController
   
       # Only allow a trusted parameter "white list" through.
       def lote_params
-        params.require(:lote).permit(:ref, :canal_compra)
+        params.require(:lote).permit(:ref, :canal_compra, :status)
       end
   end
   
