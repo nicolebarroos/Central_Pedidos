@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :orders
-  resources :batches
-  
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :orders
+      resources :batches
+    end
+  end
   #Route to filter a specific purchase channel
   get '/by_channel/:purchase_channel', to: 'orders#by_channel'
   #Route to filter a specific status
