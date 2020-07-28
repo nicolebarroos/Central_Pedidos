@@ -10,33 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_160135) do
+ActiveRecord::Schema.define(version: 2020_07_28_185449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lotes", force: :cascade do |t|
+  create_table "batches", force: :cascade do |t|
     t.string "ref"
-    t.string "canal_compra"
+    t.string "purchase_channel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
   end
 
-  create_table "pedidos", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.string "ref"
-    t.string "canal_compra"
-    t.string "nome_cliente"
-    t.string "endereco"
-    t.float "valor_total"
-    t.string "itens"
+    t.string "purchase_channel"
+    t.string "cliente_name"
+    t.string "address"
+    t.float "total_value"
+    t.string "line_items"
     t.string "status"
-    t.bigint "lote_id", null: false
+    t.bigint "batch_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "servico_entrega"
-    t.index ["lote_id"], name: "index_pedidos_on_lote_id"
+    t.string "delivery_service"
+    t.index ["batch_id"], name: "index_orders_on_batch_id"
   end
 
-  add_foreign_key "pedidos", "lotes"
+  add_foreign_key "orders", "batches"
 end

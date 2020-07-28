@@ -1,36 +1,36 @@
 require 'test_helper'
 
-class PedidosControllerTest < ActionDispatch::IntegrationTest
+class OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @pedido = pedidos(:one)
+    @order = orders(:one)
   end
 
   test "should get index" do
-    get pedidos_url, as: :json
+    get orders_url, as: :json
     assert_response :success
   end
 
-  test "should create pedido" do
-    assert_difference('Pedido.count') do
-      post pedidos_url, params: { pedido: { canal_compra: @pedido.canal_compra, endereco: @pedido.endereco, itens: @pedido.itens, lote_id: @pedido.lote_id, nome_cliente: @pedido.nome_cliente, ref: @pedido.ref, status: @pedido.status, valor_total: @pedido.valor_total } }, as: :json
+  test "should create orders" do
+    assert_difference('Order.count') do
+      post orders_url, params: { order: { purchase_channel: @order.purchase_channel, address: @order.address, line_items: @order.line_items, batch_id: @order.batch_id, cliente_name: @order.cliente_name, ref: @order.ref, status: @order.status, total_value: @order.total_value } }, as: :json
     end
 
     assert_response 201
   end
 
-  test "should show pedido" do
-    get pedido_url(@pedido), as: :json
+  test "should show order" do
+    get order_url(@order), as: :json
     assert_response :success
   end
 
-  test "should update pedido" do
-    patch pedido_url(@pedido), params: { pedido: { canal_compra: @pedido.canal_compra, endereco: @pedido.endereco, itens: @pedido.itens, lote_id: @pedido.lote_id, nome_cliente: @pedido.nome_cliente, ref: @pedido.ref, status: @pedido.status, valor_total: @pedido.valor_total } }, as: :json
+  test "should update order" do
+    patch order_url(@order), params: { order: { purchase_channel: @order.purchase_channel, address: @order.address, line_items: @order.line_items, batch_id: @order.batch_id, cliente_name: @order.cliente_name, ref: @order.ref, status: @order.status, total_value: @order.total_value } }, as: :json
     assert_response 200
   end
 
-  test "should destroy pedido" do
-    assert_difference('Pedido.count', -1) do
-      delete pedido_url(@pedido), as: :json
+  test "should destroy order" do
+    assert_difference('Order.count', -1) do
+      delete order_url(@order), as: :json
     end
 
     assert_response 204

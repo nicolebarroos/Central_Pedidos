@@ -13,8 +13,8 @@ gem 'puma', '~> 4.1'
 gem 'has_scope'
 #rails admin
 gem 'rails_admin', '~> 2.0'
-#biblioteca de autorização para Ruby e Ruby on Rails que restringe quais recursos 
-#um determinado usuário tem permissão para acessar.
+#authorization library for Ruby and Ruby on Rails that restricts which resources
+#a given user is allowed to access. For future implementations
 gem 'cancancan'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
@@ -35,7 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  #Testes com Rspec
+  #tests with Rspec
   gem 'rspec-rails', '~> 3.5'
 end
 

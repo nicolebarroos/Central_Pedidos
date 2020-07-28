@@ -19,7 +19,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module CentralPedidos
+module CentralOrder
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
@@ -34,7 +34,7 @@ module CentralPedidos
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Flash
     config.middleware.use Rack::MethodOverride
-    config.middleware.use ActionDispatch::Session::CookieStore, {:key=>"_central_pedidos_session"}
+    config.middleware.use ActionDispatch::Session::CookieStore, {:key=>"_central_order_session"}
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
   end
