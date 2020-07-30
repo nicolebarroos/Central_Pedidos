@@ -26,7 +26,7 @@ module Api
         @batch = Batch.new(batch_params)
   
         if @batch.save
-          render json: @batch, status: :created, location: @batch
+          render json: @batch, status: :created
         else
           render json: @batch.errors, status: :unprocessable_entity
         end

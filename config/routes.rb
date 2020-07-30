@@ -8,11 +8,11 @@ Rails.application.routes.draw do
     end
   end
   #Route to filter a specific purchase channel
-  get '/by_channel/:purchase_channel', to: 'orders#by_channel'
+  get '/by_channel/:purchase_channel', to: 'api/v1/orders#by_channel'
   #Route to filter a specific status
-  get '/by_status/:status', to: 'orders#by_status'
+  get '/by_status/:status', to: 'api/v1/orders#by_status'
   #Filter certain batch status
-  get '/by_status_batches/:status', to: 'batches#by_status_batches'
+  get '/by_status_batches/:status', to: 'api/v1/batches#by_status_batches'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 

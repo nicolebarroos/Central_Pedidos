@@ -1,6 +1,7 @@
 module Api
   module V1
     class OrdersController < ApplicationController
+      
       before_action :set_order, only: [:show, :update, :destroy]
       has_scope :by_channel, :by_status
 
@@ -31,7 +32,7 @@ module Api
         @order = Order.new(order_params)
 
         if @order.save
-          render json: @order, status: :created, location: @order
+          render json: @order, status: :created
         else
           render json: @order.errors, status: :unprocessable_entity
         end
