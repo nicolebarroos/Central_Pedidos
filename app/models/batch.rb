@@ -1,4 +1,5 @@
 class Batch < ApplicationRecord
+    has_many :order
     validates :ref, :purchase_channel, :status, presence: true
 
     #Filter certain batch status

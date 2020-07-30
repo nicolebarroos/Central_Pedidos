@@ -18,7 +18,7 @@ module Api
   
       # GET /batch/1
       def show
-        render json: @batches
+        render json: @batch
       end
   
       # POST /batch
