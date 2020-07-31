@@ -16,6 +16,22 @@ describe Api::V1::BatchesController, type: :controller do
 
         expect(response).to have_http_status(200)
       end
+      
+      let(:batch_params) do 
+        { 
+          ref: "123", 
+          purchase_channel: "br",
+          status: "finalizado"
+        } 
+    end
+
+    it "creates a Batch" do
+      #headers = { "ACCEPT" => "application/json" }
+      post :create, :params => { :batch => batch_params }
+    
+      expect(response.content_type).to eq("application/json; charset=utf-8")
+      expect(response).to have_http_status(:created)
+    end
 
 end
 

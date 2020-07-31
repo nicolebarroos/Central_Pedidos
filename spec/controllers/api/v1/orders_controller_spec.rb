@@ -16,20 +16,35 @@ describe Api::V1::OrdersController, type: :controller do
 
         expect(response).to have_http_status(200)
       end
+      
+    let(:order_params) do 
+        { 
+          ref: "123", 
+          purchase_channel: "br",
+          cliente_name: "Nicole", 
+          address: "Leão veloso", 
+          total_value: "250.00", 
+          line_items: "capinha", 
+          status: "finalizado", 
+          batch_id: "1", 
+          delivery_service: "sedex"
+        } 
+    end
 
-    #let(:valid_credentials) do 
-    #    { 
-    #        ref: "123", 
-    #        purchase_channel: "br"
-    #    } 
-    #end
-
-    #it "creates a Order" do
-    #    headers = { "ACCEPT" => "application/json" }
-    #    post '/api/v1/orders', params: valid_credentials
+    it "creates a Order" do
+      #headers = { "ACCEPT" => "application/json" }
+      post :create, :params => { :order => order_params }
     
-    #    expect(response.content_type).to eq("application/json")
-    #    expect(response).to have_http_status(:created)
+      expect(response.content_type).to eq("application/json; charset=utf-8")
+      expect(response).to have_http_status(:created)
+    end
+
+    #it "update a Order" do
+    #  request.headers["id"] = "1"
+    #  put :update, :params => { :order => order_params }
+    
+    #  expect(response.content_type).to eq("application/json; charset=utf-8")
+    #  expect(response).to have_http_status(200)
     #end
 end
 
