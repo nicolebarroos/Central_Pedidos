@@ -21,7 +21,7 @@ Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avan�
 
 ### Instalação
 
->git clone (https://github.com/Nicolenewsoft/Central_Pedidos.git)
+>git clone https://github.com/Nicolenewsoft/Central_Pedidos.git
 
 >bundle install
 
