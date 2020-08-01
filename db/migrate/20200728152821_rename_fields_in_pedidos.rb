@@ -1,5 +1,5 @@
 class RenameFieldsInPedidos < ActiveRecord::Migration[6.0]
-  def up
+  def change
     rename_column :pedidos, :canal_compra, :purchase_channel
     rename_column :pedidos, :nome_cliente, :cliente_name
     rename_column :pedidos, :endereco, :address

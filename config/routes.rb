@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :batches
     end
   end
+  
   #Route to filter a specific purchase channel
   get '/by_channel/:purchase_channel', to: 'api/v1/orders#by_channel'
   #Route to filter a specific status

@@ -54,7 +54,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def batch_params
-          params.require(:batch).permit(:ref, :purchase_channel, :status)
+          params.require(:batch).permit(:ref, :purchase_channel, :status, :delivery_service)
         end
     end
   end

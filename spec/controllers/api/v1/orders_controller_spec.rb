@@ -39,12 +39,5 @@ describe Api::V1::OrdersController, type: :controller do
       expect(response).to have_http_status(:created)
     end
 
-    #it "update a Order" do
-    #  request.headers["id"] = "1"
-    #  put :update, :params => { :order => order_params }
-    
-    #  expect(response.content_type).to eq("application/json; charset=utf-8")
-    #  expect(response).to have_http_status(200)
-    #end
 end
 
