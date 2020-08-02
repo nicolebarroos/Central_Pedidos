@@ -19,9 +19,11 @@ Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avan�
 * Rspec
 * Cancancan (Para futuras implementações de usuários)
 
-### Implementações em andamento:
+### Implementações em andamento
 
 * Validações customizadas
+Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega.
+
 * Conclusão dos testes automatizados
 
 ### Instalação
