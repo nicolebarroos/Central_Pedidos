@@ -10,18 +10,18 @@ module Api
         render json: @batches
       end
   
-      # GET /batches
+      # GET /api/v1/batches
       def index
         @batches = Batch.all
         render json: @batches
       end
   
-      # GET /batch/1
+      # GET /api/v1/batch/1
       def show
         render json: @batch
       end
   
-      # POST /batch
+      # POST /api/v1/batch
       def create
         @batch = Batch.new(batch_params)
   
@@ -32,7 +32,7 @@ module Api
         end
       end
   
-      # PATCH/PUT /batches/1
+      # PATCH/PUT /api/v1/batches/1
       def update
         if @batch.update(batch_params)
           render json: @batch
@@ -41,7 +41,7 @@ module Api
         end
       end
   
-      # DELETE /batches/1
+      # DELETE /api/v1/batches/1
       def destroy
         @batch.destroy
       end
