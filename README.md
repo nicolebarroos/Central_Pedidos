@@ -24,7 +24,8 @@ Obs: Para organização optei por usar o Trello por questão de familiaridade, u
 ### Implementações em andamento
 
 * Validações customizadas
-Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega.
+
+Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega que o lote.
 
 * Conclusão dos testes automatizados
 
