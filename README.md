@@ -1,24 +1,45 @@
-# README
+# Central de Pedidos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Objetivo 
 
-Things you may want to cover:
+Criar uma API REST simples usando Ruby on Rails, através dessa plataforma podemos receber pedidos de outros sistemas, agrupá-los em lotes e seguir os pedidos no pipeline de produção até a expedição.
 
-* Ruby version
+Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avançar para o próximo estágio usando alguns pontos finais para sinalizar o progresso no pipeline de produção.
 
-* System dependencies
+### Tecnologias
 
-* Configuration
+* Ruby - 2.6
+* Rails - 6.0
+* PostgreSQL
 
-* Database creation
+Obs: Para organização optei por usar o Trello por questão de familiaridade, uma vez que inicei meus estudos em Scrum essa semana.
 
-* Database initialization
+### Ruby Gems
 
-* How to run the test suite
+* Has scope
+* Rails Admin
+* Rspec
+* Cancancan (Para futuras implementações de usuários)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Implementações em andamento
 
-* Deployment instructions
+* Validações customizadas
 
-* ...
+Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega que o lote.
+
+* Conclusão dos testes automatizados
+
+### Instalação
+
+>git clone https://github.com/Nicolenewsoft/Central_Pedidos.git
+
+>bundle install
+
+>rails db:migrate
+
+>rails s
+
+### Links
+
+* [Documentação](https://web.postman.co/collections/11755710-91affed9-75bb-40b6-aa9e-908de3b28de9?version=latest&workspace=71e5c54c-7aa9-4739-8bc3-c518376b6765)
+
