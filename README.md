@@ -19,6 +19,11 @@ Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avan�
 * Rspec
 * Cancancan (Para futuras implementações de usuários)
 
+### Implementações em andamento:
+
+* Validações customizadas
+* Conclusão dos testes automatizados
+
 ### Instalação
 
 >git clone https://github.com/Nicolenewsoft/Central_Pedidos.git
