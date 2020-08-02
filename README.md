@@ -39,4 +39,4 @@ Permitir que um pedido seja designado a um determinado lote, apenas se este tive
 ### Links
 
 * [Documentação](https://web.postman.co/collections/11755710-91affed9-75bb-40b6-aa9e-908de3b28de9?version=latest&workspace=71e5c54c-7aa9-4739-8bc3-c518376b6765)
-* [Organização](https://trello.com/b/P3odCWsc/central-de-pedidos)
+
