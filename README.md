@@ -35,6 +35,10 @@ Permitir que um pedido seja designado a um determinado lote, apenas se este tive
 
 >rails db:migrate
 
+>bundle exec rspec
+
+Para rodar os testes
+
 >rails s
 
 ### Links
