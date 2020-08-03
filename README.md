@@ -31,13 +31,19 @@ Permitir que um pedido seja designado a um determinado lote, apenas se este tive
 
 >git clone https://github.com/Nicolenewsoft/Central_Pedidos.git
 
+Instalar gems
+
 >bundle install
+
+Migrações:
 
 >rails db:migrate
 
+Para rodar os testes:
+
 >bundle exec rspec
 
-Para rodar os testes
+Iniciar servidor:
 
 >rails s
 
