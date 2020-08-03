@@ -1,3 +1,7 @@
+#Outra forma de fazer isso é usando um factory de teste, ex: factoryGirl
+#será implementado em uma melhoria futura
+#https://www.betterspecs.org/ -
+
 require 'rails_helper'
 
 describe Api::V1::BatchesController, type: :controller do
