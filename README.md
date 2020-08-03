@@ -27,8 +27,6 @@ Obs: Para organização optei por usar o Trello por questão de familiaridade, u
 
 Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega que o lote.
 
-* Conclusão dos testes automatizados
-
 ### Instalação
 
 >git clone https://github.com/Nicolenewsoft/Central_Pedidos.git
