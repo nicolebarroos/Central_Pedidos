@@ -1,37 +1,49 @@
 require 'rails_helper'
 
 describe Api::V1::BatchesController, type: :controller do
+  let(:batch_params) do 
+    {
+      ref: 'referencia', 
+      purchase_channel: 'Site Br', 
+      status: 'finalizado',
+      delivery_service: 'sedex'
+    }
+  end
+
+  before(:each) do
+    @batch = Batch.create(batch_params)
+  end
   
-    it 'request index and return 200 OK' do
-      request.accept = 'application/vnd.api+json'
-      get :index
-      expect(response).to have_http_status(:ok)
-    end
+  it 'request index and return 200 OK' do
+    get :index
+    expect(response).to have_http_status(:ok)
+  end
 
-    it 'GET /api/v1/batches/:id' do
-        batch = Batch.first
-        request.accept = 'application/vnd.api+json'
-        get :show, params: { id: batch.id }
-        #response_body = JSON.parse(response.body)
+  it 'GET /api/v1/batches/:id' do
+    get :show, params: { id: @batch.id }
 
-        expect(response).to have_http_status(200)
-      end
-      
-      let(:batch_params) do 
-        { 
-          ref: "123", 
-          purchase_channel: "br",
-          status: "finalizado"
-        } 
-    end
+    expect(response).to have_http_status(200)
+  end
 
-    it "creates a Batch" do
-      #headers = { "ACCEPT" => "application/json" }
-      post :create, :params => { :batch => batch_params }
-    
-      expect(response.content_type).to eq("application/json; charset=utf-8")
-      expect(response).to have_http_status(:created)
-    end
+  it "creates a Batch" do
+    post :create, :params => { :batch => batch_params }
 
+    expect(response).to have_http_status(:created)
+    expect(response.body).to include("referencia")
+  end
+
+  it "PATCH /api/v1/batches/:id" do
+    patch :update, :params => { :id => @batch.id, :batch => batch_params.merge!(purchase_channel: "Site Br") }
+
+    expect(response.body).to include("Site Br")
+    expect(response.body).not_to include("web")
+  end
+
+  it "DELETE /api/v1/batches/:id" do
+    delete :destroy, :params => {:id => @batch.id}
+
+    expect(response).to have_http_status(204)
+  end
+  
 end
 
