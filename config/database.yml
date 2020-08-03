@@ -57,6 +57,13 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+#Observação: Irei alterar o nome dos bancos de dados para cada ambiente,
+#pois é importante darmos nomes diferentes,
+#geralmente usando um underline e logo após o nome do ambiente
+#ex: central_pedidos_development ou central_pedidos_test
+#Isso será implementado.
+
 test:
   <<: *default
   database: central_pedidos
