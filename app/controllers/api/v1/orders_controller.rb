@@ -3,7 +3,7 @@ module Api
     class OrdersController < ApplicationController
       
       before_action :set_order, only: [:show, :update, :destroy]
-      has_scope :by_channel, :by_status
+      has_scope :by_channel, :by_status, :by_items
 
       #Function to pass the parameter purchase_channel, which will be used in the route
       def by_channel
@@ -13,6 +13,11 @@ module Api
       #Function to pass the status parameter, which will be used in the route 
       def by_status
         @orders = Order.by_status(params[:status])
+        render json: @orders
+      end
+
+      def by_items
+        @orders = Order.by_items(params[:line_items])
         render json: @orders
       end
 

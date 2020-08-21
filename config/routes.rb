@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #Filter certain batch status
   get '/by_status_batches/:status', to: 'api/v1/batches#by_status_batches'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/by_items/:line_items', to: 'api/v1/orders#by_items'
 end
 
 
