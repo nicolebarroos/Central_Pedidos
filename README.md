@@ -12,8 +12,6 @@ Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avan�
 * Rails - 6.0
 * PostgreSQL
 
-Obs: Para organização optei por usar o Trello por questão de familiaridade, uma vez que inicei meus estudos em Scrum essa semana.
-
 ### Ruby Gems
 
 * Has scope
