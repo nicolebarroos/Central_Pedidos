@@ -6,7 +6,7 @@ class PurchaseChannel < ActiveModel::Validator
         batchPurchaseChannel = Batch.find(record.batch_id)
 
         record.errors[:base] << ERROR_MESSAGE if batchPurchaseChannel.nil?
-        if record.purchase_channel = batchPurchaseChannel.purchase_channel
+        if record.purchase_channel != batchPurchaseChannel.purchase_channel
             record.errors[:base] << ERROR_MESSAGE
         end
     end
