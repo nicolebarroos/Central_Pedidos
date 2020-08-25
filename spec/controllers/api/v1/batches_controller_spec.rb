@@ -1,15 +1,11 @@
-#Outra forma de fazer isso é usando um factory de teste, ex: factoryGirl
-#será implementado em uma melhoria futura
-#https://www.betterspecs.org/ -
-
 require 'rails_helper'
 
 describe Api::V1::BatchesController, type: :controller do
   let(:batch_params) do 
     {
-      ref: 'referencia', 
+      ref: '201803-54', 
       purchase_channel: 'Site Br', 
-      status: 'finalizado',
+      status: 'finished',
       delivery_service: 'sedex'
     }
   end
@@ -33,7 +29,7 @@ describe Api::V1::BatchesController, type: :controller do
     post :create, :params => { :batch => batch_params }
 
     expect(response).to have_http_status(:created)
-    expect(response.body).to include("referencia")
+    expect(response.body).to include("ref")
   end
 
   it "PATCH /api/v1/batches/:id" do

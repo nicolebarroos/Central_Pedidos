@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   #Validations
   validates :ref, :purchase_channel, :cliente_name, :address, :delivery_service, presence: true
   validates :total_value, :line_items, :status, :batch_id, presence: true
-  
+  validates_with PurchaseChannel
 
   #Filter a specific purchase channel
   scope :by_channel, -> purchase_channel { where(purchase_channel: purchase_channel) }
