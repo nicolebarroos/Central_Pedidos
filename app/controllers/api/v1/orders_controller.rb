@@ -27,7 +27,7 @@ module Api
         render json: @orders
       end
 
-      # GET /api/v1/orders/1
+      # GET /api/v1/orders/id
       def show
         render json: @order
       end

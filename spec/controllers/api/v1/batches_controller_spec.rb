@@ -4,9 +4,9 @@ describe Api::V1::BatchesController, type: :controller do
   let(:batch_params) do 
     {
       ref: '201803-54', 
-      purchase_channel: 'Site Br', 
-      status: 'finished',
-      delivery_service: 'sedex'
+      purchase_channel: 'Loja Iguatemi', 
+      status: 'Produção',
+      delivery_service: 'Correios'
     }
   end
 
@@ -33,9 +33,9 @@ describe Api::V1::BatchesController, type: :controller do
   end
 
   it "PATCH /api/v1/batches/:id" do
-    patch :update, :params => { :id => @batch.id, :batch => batch_params.merge!(purchase_channel: "Site Br") }
+    patch :update, :params => { :id => @batch.id, :batch => batch_params.merge!(purchase_channel: "Loja Iguatemi") }
 
-    expect(response.body).to include("Site Br")
+    expect(response.body).to include("Loja Iguatemi")
     expect(response.body).not_to include("web")
   end
 

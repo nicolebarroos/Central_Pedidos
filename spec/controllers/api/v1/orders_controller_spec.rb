@@ -3,16 +3,17 @@ require 'rails_helper'
 describe Api::V1::OrdersController, type: :controller do
   let(:order_params) do 
     {
+      id: 13,
       ref: "BR102030",
-      purchase_channel: " site BR",
+      purchase_channel: "Loja Iguatemi",
       cliente_name: "Rogerio Lima",
-      delivery_service: "SEDEX",
-      address: " Rua Padre Valdevino, 2475 - Aldeota, Fortaleza - CE, 60135-041",
-      total_value: 123.0,
-      line_items: "Case-my-best-friend, modelo: iPhone X, tipo de caso: Rose Leather",
-      status: "Pronto",
-      batch_id: 1
-    }
+      address: "Rua Padre Valdevino, 2475 - Aldeota, Fortaleza - CE, 60135-041",
+      total_value: 123.3,
+      line_items: "Case-my-best-friend, model: iPhone X, case type: Rose Leather",
+      status: "Produção",
+      batch_id: 1,
+      delivery_service: "Correios"
+  }
   end
 
   before(:each) do
@@ -34,13 +35,13 @@ describe Api::V1::OrdersController, type: :controller do
     post :create, :params => { :order => order_params }
 
     expect(response).to have_http_status(:created)
-    expect(response.body).to include("BR102030")
+    expect(response.body).to include("ref")
   end
 
   it "PATCH /api/v1/orders/:id" do
-    patch :update, :params => { :id => @order.id, :order => order_params.merge!(purchase_channel: "Site Br") }
+    patch :update, :params => { :id => @order.id, :order => order_params.merge!(purchase_channel: "Loja Iguatemi") }
 
-    expect(response.body).to include("Site Br")
+    expect(response.body).to include("Loja Iguatemi")
     expect(response.body).not_to include("web")
   end
 
