@@ -12,20 +12,12 @@ Outros sistemas podem controlar quando um Pedido ou Lote está pronto para avan�
 * Rails - 6.0
 * PostgreSQL
 
-Obs: Para organização optei por usar o Trello por questão de familiaridade, uma vez que inicei meus estudos em Scrum essa semana.
-
 ### Ruby Gems
 
 * Has scope
 * Rails Admin
 * Rspec
 * Cancancan (Para futuras implementações de usuários)
-
-### Implementações em andamento
-
-* Validações customizadas
-
-Permitir que um pedido seja designado a um determinado lote, apenas se este tiver o mesmo canal de compra e serviço de entrega que o lote.
 
 ### Instalação
 
